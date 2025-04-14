@@ -1,10 +1,15 @@
-import { Button, HStack } from "@chakra-ui/react"
+import Navbar from "../components/Navbar";
+// import SearchBar from "../components/SearchBar";
 
-export default function Demo(){
+export default function Home() {
+  const isSignedIn = false;
+
   return (
-    <HStack>
-      <Button>Click me</Button>
-    </HStack>
-  )
-
+    <div>
+      <Navbar isSignedIn={isSignedIn} />
+      <main>
+        {/* <SearchBar /> */}
+      </main>
+    </div>
+  );
 }
