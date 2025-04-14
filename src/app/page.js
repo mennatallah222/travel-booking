@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-// import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/SearchBar";
 
 export default function Home() {
   const isSignedIn = false;
@@ -8,7 +8,7 @@ export default function Home() {
     <div>
       <Navbar isSignedIn={isSignedIn} />
       <main>
-        {/* <SearchBar /> */}
+        <SearchBar />
       </main>
     </div>
   );
