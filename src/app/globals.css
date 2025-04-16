@@ -17,3 +17,75 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hero section */
+.hero-sections {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+/* 
+.hero-sections::before {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: black;
+} */
+.css-4stksi,
+.css-kcj133 {
+  background: none;
+  border: none;
+}
+.rdrCalendarWrapper {
+  width: inherit;
+}
+.rdrCalendarWrapper,
+.rdrDateDisplayWrapper {
+  background: none !important;
+  background-color: #565656 !important;
+  border-radius: 30px;
+}
+.rdrDateDisplayWrapper {
+  display: none;
+}
+.rdrMonthName {
+  display: flex;
+  justify-content: center;
+}
+.rdrMonthName,
+.rdrWeekDay {
+  color: #ffffff !important;
+}
+
+.my-calendaer {
+  padding: 0 !important;
+  margin: 0 !important;
+  /* background-color: transparent !important; */
+}
+.rdrPprevButton,
+.rdrNextButton {
+  position: relative !important;
+  top: 40px !important;
+}
+.rdrMonthAndYearPickers {
+  display: none !important;
+}
+.rdrStartEdge,
+.rdrEndEdge,
+.rdrInRange,
+.rdrSelected {
+  background: #d1ab71 !important;
+  border-radius: 20px !important;
+  padding: 24px;
+}
+.rdrDay {
+  width: 50px !important;
+  height: 50px !important;
+  background: #96938f !important;
+  border-radius: 20px !important;
+  margin: 10px !important;
+}

@@ -1,9 +1,11 @@
 "use client"
-import { Input, Box, Flex, Image, Text, Link } from "@chakra-ui/react";
+import { Input, Box, Flex, Image, Text, Link, InputGroup } from "@chakra-ui/react";
+import {CiSearch } from "react-icons/ci";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import '../app/globals.css';
 
-const MotionBox=motion(Box);
+const MotionBox=motion.create(Box);
 const SearchBar = ({isVisible, onClose}) => {
   const [searchItem, setSearchItem] = useState("");
   if(!isVisible){
@@ -19,8 +21,10 @@ const SearchBar = ({isVisible, onClose}) => {
   return (
     <Box position="fixed" top={0} left={0} width="100%" height="100%" bg="blackAlpha.800" zIndex={5} onClick={onClose}>
       <MotionBox bg="gray" p="0px 16px" borderRadius={50} display="flex" alignItems="center" flexDirection="row" position="absolute" top="60px" left="40%"  width="25%" zIndex={10} onClick={(e) => e.stopPropagation()} initial={{opacity:0, scale:0.7}} animate={{opacity:1, scale:1}} transition={{duration:0.3, ease:"easeOut"}}>
-        <Image src="/imgs/magnifier.png" alt="Search Icon" cursor="pointer"/>
-        <Input placeholder="Search" _placeholder={{color:"#d1ab71"}} value={searchItem} onChange={(e) => setSearchItem(e.target.value)} border={0}/>
+        
+        <InputGroup startAddon={<CiSearch color="#d1ab71" cursor="pointer" size="32px"/>}>
+          <Input placeholder="Search" _placeholder={{color:"#d1ab71"}} value={searchItem} onChange={(e) => setSearchItem(e.target.value)} border="none"/>
+        </InputGroup>
       </MotionBox>
       <MotionBox bg="gray" borderRadius="3xl" position="absolute" top="120px" left="40%" width="25%" shadow="lg" zIndex={11} onClick={(e) => e.stopPropagation()} initial={{opacity:0, scale:0.7, y:-10}} animate={{opacity:1, scale:1, y:0}} transition={{duration:0.3, ease:"easeOut"}}>
         <Box p={4} >

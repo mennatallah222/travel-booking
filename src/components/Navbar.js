@@ -1,8 +1,9 @@
-"use client"
-import { Box, Flex, Link, Image, Text, Button } from "@chakra-ui/react";
+"use client";
+import { Box, Flex, Link, Image, Text, Button, Separator } from "@chakra-ui/react";
 import ProfileDropdown from "./ProfileDropdown";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import {CiSearch } from "react-icons/ci";
 
 const Navbar = ({ isSignedIn }) => {
     const [isVisible, setSearchVisible]=useState(false);
@@ -17,7 +18,8 @@ const Navbar = ({ isSignedIn }) => {
       <Link href="/" _hover={{textDecoration:"none"}}>
         <Image src="/imgs/logo.svg" alt="Logo" cursor="pointer" />
       </Link>
-      <Image src="/imgs/magnifier.png" alt="Search Icon" onClick={toggleSearch} cursor="pointer" />
+      {/*  */}
+      <CiSearch size="32px" color="#d1ab71" cursor="pointer" onClick={toggleSearch}/>
       <Link href="/" color="#d1ab71">EgyExplore</Link>
       <Link href="/tales" color="#d1ab71">EgyTales</Link>
       <Link href="/treasure" color="#d1ab71">EgyTreasure</Link>
@@ -30,7 +32,7 @@ const Navbar = ({ isSignedIn }) => {
 
       {/*user dropdown list*/}
       {!isSignedIn ? (<>
-            <Text color="white">|</Text>
+            <Separator orientation="vertical" height="5" />
             <Image src="/imgs/Heart.svg" alt="Heart Icon" cursor="pointer" />
             <Image src="/imgs/Shopping cart.svg" alt="Shopping Cart Icon" cursor="pointer" mr={8}/>
             <ProfileDropdown/>
