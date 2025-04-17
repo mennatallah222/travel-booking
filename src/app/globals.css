@@ -129,7 +129,7 @@ body {
 
 .rdrDay:has(.rdrStartEdge),
 .rdrDay:has(.rdrEndEdge) {
-  border: 1px solid #f6cf95 !important;
+  border: 1px solid #ffefd6 !important;
 }
 .rdrDay:has(.rdrStartEdge) .rdrDayNumber span,
 .rdrDay:has(.rdrEndEdge) .rdrDayNumber span {
@@ -176,4 +176,13 @@ body {
 }
 .rdrDayDisabled .rdrDayNumber span {
   text-decoration: line-through;
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
 }

@@ -1,6 +1,8 @@
+import { Box } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 import SearchBar from "../components/SearchBar";
 import Hero from "@/components/Hero";
+import MostRelevant from "@/components/MostRelevant";
 
 export default function Home() {
   const isSignedIn = false;
@@ -9,7 +11,10 @@ export default function Home() {
     <div>
       <Navbar isSignedIn={isSignedIn} />
         <SearchBar />
-        <Hero name="Beshoy"/>
+        <Box bgImage="url('/imgs/HeroBG.svg')" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
+          <Hero name="Beshoy"/>
+        </Box>
+        <MostRelevant/>
     </div>
   );
 }

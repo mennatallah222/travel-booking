@@ -37,7 +37,6 @@ export default function Hero({name}){
     const [rooms, setRooms] = useState(1);
 
     return (
-        <Box bgImage="url('/imgs/HeroBG.svg')" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
             <Box width="85%" display="flex" flexDirection="column" justifySelf="center" height="100%">
                 <Box textAlign="start" color="white" p={8} m="64px" mt={32}>
                     <Box py={4}>
@@ -178,6 +177,5 @@ export default function Hero({name}){
                     </Box>
                 </Box>
             </Box>
-        </Box>
     );
 }
