@@ -99,7 +99,7 @@ body {
 .rdrDay:has(span.rdrInRange),
 .rdrDay:has(span.rdrSelected) {
   background: #d1ab71 !important;
-  border-radius: 20px !important;
+  border-radius: 5px !important;
   padding: 24px !important;
   display: flex !important;
   justify-content: center !important;
@@ -108,8 +108,8 @@ body {
 .rdrDay {
   width: 50px !important;
   height: 50px !important;
-  background: #96938f !important;
-  border-radius: 20px !important;
+  background: #d6cdc2 !important;
+  border-radius: 5px !important;
   margin: 10px !important;
   display: flex !important;
   justify-content: center !important;
@@ -117,4 +117,63 @@ body {
 }
 .rdrDay.rdrDayPassive {
   visibility: hidden !important;
+}
+
+.rdrDayNumber span::after {
+  content: none !important;
+  display: none !important;
+}
+.css-vc259f {
+  background: transparent;
+}
+
+.rdrDay:has(.rdrStartEdge),
+.rdrDay:has(.rdrEndEdge) {
+  border: 1px solid #f6cf95 !important;
+}
+.rdrDay:has(.rdrStartEdge) .rdrDayNumber span,
+.rdrDay:has(.rdrEndEdge) .rdrDayNumber span {
+  z-index: 100 !important;
+  color: #d1ab71 !important;
+}
+.rdrDay:has(span.rdrStartEdge)::before,
+.rdrDay:has(span.rdrEndEdge)::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 34px 34px 0 0;
+  border-radius: 5px 0 5px 0;
+  transform: rotate(-45deg);
+}
+
+.rdrDay:has(span.rdrEndEdge)::before {
+  border-color: #ffffff transparent transparent transparent;
+  left: 15%;
+}
+
+.rdrDay:has(span.rdrStartEdge)::before {
+  border-color: transparent #ffffff transparent transparent;
+  right: 15%;
+}
+
+.rdrDay:has(span.rdrStartEdge)::after,
+.rdrDay:has(span.rdrEndEdge)::after {
+  content: "";
+  position: absolute;
+  width: 48px;
+  height: 26px;
+  background-color: #ffffff;
+  transform: rotate(90deg);
+  border-radius: 5px;
+}
+
+.rdrDay:has(span.rdrEndEdge)::after {
+  left: 22%;
+}
+
+.rdrDay:has(span.rdrStartEdge)::after {
+  right: 22%;
+}
+.rdrDayDisabled .rdrDayNumber span {
+  text-decoration: line-through;
 }
