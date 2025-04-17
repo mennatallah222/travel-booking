@@ -2,12 +2,14 @@
 import { Box, Text, Image, Button, Select, Portal, Span, Stack, createListCollection, Separator, Input } from "@chakra-ui/react";
 import { FaLocationArrow } from "react-icons/fa";
 import "../app/globals.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiCalendar, CiLocationOn } from "react-icons/ci";
 import {DateRange} from "react-date-range";
-import { addDays } from 'date-fns';
+import { addDays, format } from 'date-fns';
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import { formatDate } from "date-fns";
+import { enUS } from "date-fns/locale";
 
 const locs = createListCollection({
   items: [
@@ -27,7 +29,7 @@ export default function Hero({name}){
             key:"selection"
         },
     ]);
-    
+
     return (
         <Box bgImage="url('/imgs/HeroBG.svg')" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
             <Box width="85%" display="flex" flexDirection="column" justifySelf="center" height="100%">
@@ -80,13 +82,20 @@ export default function Hero({name}){
                         <Box className="hero-sections w-full relative">
                             <Button className="flex items-center gap-x-2 text-sm rounded-lg border px-4 py-2 text-white bg-gray-600" onClick={() => setShowDatePicker(!showDatePicker)}>
                                 <CiCalendar size="20px" color="#d1ab71" />
-                                <Text fontSize="sm">Select Dates</Text>
+                                <Text fontSize="sm">
+                                    {
+                                        range[0].startDate&&range[0].endDate?
+                                        `${formatDate(range[0].startDate, "dd MMM yyyy")} - ${formatDate(range[0].endDate, "dd MMM yyyy")}`
+                                        :
+                                        "Select Dates"
+                                    }
+                                </Text>
                             </Button>
                             
                         </Box>
                         {showDatePicker && (
-                        <Box className="absolute left-0 top-full mt-2 z-50 p-4 rounded-lg shadow-lg overflow-hidden" width="100%" minWidth="100%" maxWidth="100%">
-                            <DateRange ranges={range} style={{width:"100%"}}
+                        <Box className="absolute left-0 top-full mt-2 z-50 p-6 rounded-lg shadow-lg" style={{width:"100%"}}>
+                            <DateRange locale={enUS} ranges={range} style={{width:"100%"}}
                             onChange={(item) => setRange([item.selection])}
                             moveRangeOnFirstSelection={false} 
                             showPreview={true} months={2}
@@ -97,7 +106,7 @@ export default function Hero({name}){
 
                         <Separator orientation="vertical" height="10" />
 
-                        <Box className="hero-sections w-full">
+                        <Box className="hero-sections">
                             <Image src="/imgs/Users.png"/>
                             {/* <Text>***TO ADD ADULTS, CHILDREN, ROOMS PICKER***</Text> */}
                         </Box>

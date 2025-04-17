@@ -62,25 +62,48 @@ body {
 }
 
 .my-calendaer {
-  padding: 0 !important;
-  margin: 0 !important;
-  /* background-color: transparent !important; */
+  margin: 10px !important;
+  overflow: visible !important;
+}
+.my-calendaer div,
+.my-calendaer div div {
+  padding: 6px 20px !important;
 }
 .rdrPprevButton,
 .rdrNextButton {
   position: relative !important;
   top: 40px !important;
+  background: none !important;
+}
+.rdrPprevButton i {
+  border-width: 8px 14px 8px 0px !important;
+  border-color: transparent #ffffff transparent transparent !important;
+}
+
+.rdrNextButton i {
+  border-width: 8px 0px 8px 14px !important;
+  border-color: transparent transparent transparent #ffffff !important;
 }
 .rdrMonthAndYearPickers {
   display: none !important;
 }
-.rdrStartEdge,
-.rdrEndEdge,
-.rdrInRange,
-.rdrSelected {
+.rdrDay span.rdrStartEdge,
+.rdrDay span.rdrEndEdge,
+.rdrDay span.rdrInRange,
+.rdrDay span.rdrSelected {
+  all: unset !important;
+}
+
+.rdrDay:has(span.rdrStartEdge),
+.rdrDay:has(span.rdrEndEdge),
+.rdrDay:has(span.rdrInRange),
+.rdrDay:has(span.rdrSelected) {
   background: #d1ab71 !important;
   border-radius: 20px !important;
-  padding: 24px;
+  padding: 24px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 .rdrDay {
   width: 50px !important;
@@ -88,4 +111,10 @@ body {
   background: #96938f !important;
   border-radius: 20px !important;
   margin: 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.rdrDay.rdrDayPassive {
+  visibility: hidden !important;
 }
