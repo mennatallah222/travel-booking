@@ -99,7 +99,7 @@ export default function Hero({name}){
                             
                         </Box>
                         {showDatePicker && (
-                        <Box className="absolute left-0 top-full mt-2 z-50 p-6 rounded-lg shadow-lg" style={{width:"100%"}}>
+                        <Box className="absolute left-0 top-full mt-2 z-500 p-6 rounded-lg shadow-lg" style={{width:"100%"}}>
                             <DateRange locale={enUS} ranges={range} style={{width:"100%"}}
                             onChange={(item) => setRange([item.selection])}
                             moveRangeOnFirstSelection={false} 
