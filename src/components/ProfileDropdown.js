@@ -1,6 +1,6 @@
 import { Image, Menu, Portal} from "@chakra-ui/react";
 
-export default function ProfileDropdown(){
+export default function ProfileDropdown({onLogOut}){
   const links=[
         {
             title: "My Profile",
@@ -19,11 +19,6 @@ export default function ProfileDropdown(){
             title: "Settings",
             href: "/settings",
         },
-        {
-            title: "Log Out",
-            href: "/logout",
-            color:"red.500"
-        },
     ];
   return (
     <Menu.Root>
@@ -38,6 +33,7 @@ export default function ProfileDropdown(){
                     <a href={link.href} target="_blank" rel="noreferrer" > {link.title} </a>
                 </Menu.Item>
                 ))}
+                <Menu.Item value="logout" color="red.500" cursor="pointer" onClick={onLogOut}>Logout</Menu.Item>
             </Menu.Content>
           </Menu.Positioner>
       </Portal>

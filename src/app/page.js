@@ -11,11 +11,10 @@ import './globals.css';
 import BookNow from "@/components/BookNow";
 
 export default function Home() {
-  const isSignedIn = false;
 
   return (
     <Box overflow="hidden">
-      <Navbar isSignedIn={isSignedIn} />
+      <Navbar />
         <SearchBar />
         <Box bgImage="url('/imgs/HeroBG.svg')" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
           <Hero name="Beshoy"/>
