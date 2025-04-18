@@ -74,13 +74,13 @@ export default function MostRelevant(){
     setCurrentIndex((prev) =>Math.min(prev+1, maxIdx));
   };
     return(
-    <Box className="bg-black" width="99vw" height="100vh">
+    <Box className="bg-black">
         <Box display="flex" justifySelf="center" flexDirection="column" p={4}>
             <Text fontSize="4xl" color="white">The Most Relevant</Text>
 
             <Box className="relative mt-4" display="flex" justifySelf="center" justifyContent="center" alignItems="center">
-                <Button className="absolute left-0 top-1/2  h-[459px] rounded-xl bg-[#111927] text-white p-2 group" onClick={prevSlide}>
-                    <FaChevronLeft className="text-gray-400 group-hover:text-white" />
+                <Button className="absolute left-5 z-100 top-1/2  h-[459px] rounded-xl p-2 group" bgColor="white" rounded="full"  width="40px" height="40px" onClick={prevSlide}>
+                    <FaChevronLeft className="text-black group-hover:text-gray-500" />
                 </Button>
                 <Box className="slider-container" width={`${cardWidth*visibleCards}px`} overflow="hidden" position="relative">
                     <Box className="slider" display="flex" gap={4} transition={"transform 0.5s ease-in-out"} transform={`translateX(-${currentIndex*cardWidth}px)`} width= {`${images.length * cardWidth}px`}>
@@ -115,8 +115,8 @@ export default function MostRelevant(){
                         }
                     </Box>
                 </Box>
-                <Button className="absolute right-0 top-1/2 transform h-[459px] rounded-xl bg-[#111927] text-white p-2 group" onClick={nextSlide}>
-                    <FaChevronRight className="text-gray-400 group-hover:text-white" />
+                <Button className="absolute right-5 z-100 top-1/2 h-[459px] rounded-xl bg-[#111927] p-2 group" bgColor="white" rounded="full"  width="40px" height="40px" onClick={nextSlide}>
+                    <FaChevronRight className="text-black group-hover:text-gray-500" />
                 </Button>
             </Box>
         </Box>
