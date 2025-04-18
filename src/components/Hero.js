@@ -38,15 +38,16 @@ export default function Hero({name}){
 
     return (
             <Box width="85%" display="flex" flexDirection="column" justifySelf="center" height="100%">
-                <Box textAlign="start" color="white" p={8} m="64px" mt={32}>
+            
+                <Box  textAlign={{ base: "center", md: "start" }}  color="white"  p={8}  m={{ base: "32px", md: "64px" }}  mt={{ base: 16, md: 32 }}>
                     <Box py={4}>
-                        <Box display="flex" fontWeight="bold" fontSize="xl" p={2} alignItems="center">
-                            <FaLocationArrow color="white"/>
+                        <Box display="flex" fontWeight="bold" fontSize={{ base: "lg", md: "xl" }} p={2} alignItems="center">
+                            <FaLocationArrow color="white" />
                             <Text color="white" ml={2}>Egypt</Text>
                         </Box>
-                        <Text fontSize="5xl" fontWeight="bold">Hey, {name}!</Text>
-                        <Text fontSize="5xl" color="white">Tell us where you want to stay.</Text>
-                        <Text fontSize="3xl">Book over 450 curated Egyptian hotels.</Text>
+                        <Text fontSize={{ base: "3xl", md: "5xl" }} fontWeight="bold">Hey, {name}!</Text>
+                        <Text fontSize={{ base: "3xl", md: "5xl" }} color="white">Tell us where you want to stay.</Text>
+                        <Text fontSize={{ base: "2xl", md: "3xl" }}>Book over 450 curated Egyptian hotels.</Text>
                     </Box>
                     
                     <Box position="relative" borderRadius="50px" p={2} width="95%" bgColor="#c0bbbb66" display="flex" justifyContent="space-evenly" justifySelf="center" alignItems="center">
@@ -99,7 +100,7 @@ export default function Hero({name}){
                             
                         </Box>
                         {showDatePicker && (
-                        <Box className="absolute left-0 top-full mt-2 z-500 p-6 rounded-lg shadow-lg" style={{width:"100%"}}>
+                        <Box className="absolute left-0 top-full mt-2 z-50 p-6 rounded-lg shadow-lg" style={{width:"100%"}}>
                             <DateRange locale={enUS} ranges={range} style={{width:"100%"}}
                             onChange={(item) => setRange([item.selection])}
                             moveRangeOnFirstSelection={false} 
