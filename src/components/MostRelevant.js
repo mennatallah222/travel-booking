@@ -65,7 +65,7 @@ export default function MostRelevant(){
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const visibleCards=2.5;
-  const cardWidth=420;
+  const cardWidth=520;
   const maxIdx=images.length-visibleCards;
   const prevSlide = () => {
     setCurrentIndex((prev) =>Math.max(prev-1, 0));
@@ -75,7 +75,7 @@ export default function MostRelevant(){
   };
     return(
     <Box className="bg-black">
-        <Box display="flex" justifySelf="center" flexDirection="column" p={4}>
+        <Box display="flex" justifySelf="center" flexDirection="column" width="75%" p={4}>
             <Text fontSize="4xl" color="white">The Most Relevant</Text>
 
             <Box className="relative mt-4" display="flex" justifySelf="center" justifyContent="center" alignItems="center">
@@ -95,7 +95,7 @@ export default function MostRelevant(){
                                             <FaRegHeart style={{ color: "black", strokeWidth: 2 }}/>
                                         </Button>
                                     </Box>
-                                    <Image src={image.src} alt={`Slide ${idx+1}`} objectFit="cover" borderRadius="30px" width="100%"/>
+                                    <Image src={image.src} alt={`Slide ${idx+1}`} objectFit="cover" borderRadius="30px" width="100%" height="300px"/>
                                     <Box display="flex" justifyContent="space-between" fontSize="18px">
                                         <Box display="flex" flexDirection="column">
                                             <Text color="black" padding="12px 0 0 12px" fontWeight="bold">{image.title}</Text>

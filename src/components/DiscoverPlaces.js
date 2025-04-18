@@ -49,7 +49,7 @@ export default function DiscoverPlaces(){
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const visibleCards=6.5;
-  const cardWidth=160;
+  const cardWidth=260;
   const maxIdx=images.length-visibleCards;
   const prevSlide = () => {
     setCurrentIndex((prev) =>Math.max(prev-1, 0));
@@ -59,7 +59,7 @@ export default function DiscoverPlaces(){
   };
     return(
     <Box className="bg-black">
-        <Box display="flex" justifySelf="center" flexDirection="column" p={4}>
+        <Box display="flex" justifySelf="center" flexDirection="column" width="75%" p={4}>
             <Text fontSize="4xl" color="white">Discover New Places</Text>
 
             <Box className="relative mt-4" display="flex" justifySelf="center" justifyContent="center" alignItems="center">
@@ -67,7 +67,7 @@ export default function DiscoverPlaces(){
                     <FaChevronLeft className="text-black group-hover:text-gray-500" />
                 </Button>
                 <Box className="slider-container" width={`${cardWidth*visibleCards}px`} overflow="hidden" position="relative">
-                    <Box className="slider" display="flex" gap={2} transition={"transform 0.5s ease-in-out"} transform={`translateX(-${currentIndex*cardWidth}px)`} width= {`${images.length * cardWidth}px`}>
+                    <Box className="slider" display="flex" gap={4} transition={"transform 0.5s ease-in-out"} transform={`translateX(-${currentIndex*cardWidth}px)`} width= {`${images.length * cardWidth}px`}>
                         {
                             images.map((image, idx)=>(
                                 <Box key={idx} bgColor="white" flexShrink={0} borderRadius="30px" position="relative" display="flex" flexDirection="column" >

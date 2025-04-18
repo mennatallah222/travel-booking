@@ -6,12 +6,14 @@ import MostRelevant from "@/components/MostRelevant";
 import DiscoverPlaces from "@/components/DiscoverPlaces";
 import WhyChoose from "@/components/WhyChoose";
 import Footer from "@/components/Footer";
+import TrendingDestinations from "@/components/TrendingDestinations";
+import './globals.css';
 
 export default function Home() {
   const isSignedIn = false;
 
   return (
-    <div>
+    <Box overflow="hidden">
       <Navbar isSignedIn={isSignedIn} />
         <SearchBar />
         <Box bgImage="url('/imgs/HeroBG.svg')" backgroundRepeat="no-repeat" backgroundSize="cover" backgroundPosition="center">
@@ -20,7 +22,8 @@ export default function Home() {
         <MostRelevant/>
         <DiscoverPlaces/>
         <WhyChoose/>
+        <TrendingDestinations/>
         <Footer/>
-    </div>
+    </Box>
   );
 }
