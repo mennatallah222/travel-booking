@@ -4,8 +4,8 @@ import { FaInstagram, FaFacebookF, FaTiktok, FaXTwitter, FaLinkedinIn } from "re
 
 export default function Footer() {
   return (
-    <Box className="bg-black" color="white" py={10} px={8} >
-        <Flex justifySelf="center" width="75%" direction="column" gap={8}>
+    <Box className="bg-black" color="white" py={10} px={8}>
+        <Flex justifySelf="center" width="75%" direction="column" gap={8} mt={8}>
             <Flex align="flex-start" direction="column" gap={4}>
                 <Image src="/imgs/LOGO 2.svg" alt="GOE Logo"/>
                 <Text fontSize="lg" maxW="300px">

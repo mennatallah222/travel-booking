@@ -8,6 +8,7 @@ import WhyChoose from "@/components/WhyChoose";
 import Footer from "@/components/Footer";
 import TrendingDestinations from "@/components/TrendingDestinations";
 import './globals.css';
+import BookNow from "@/components/BookNow";
 
 export default function Home() {
   const isSignedIn = false;
@@ -23,6 +24,7 @@ export default function Home() {
         <DiscoverPlaces/>
         <WhyChoose/>
         <TrendingDestinations/>
+        <BookNow/>
         <Footer/>
     </Box>
   );
